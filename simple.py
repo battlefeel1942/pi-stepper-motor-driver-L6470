@@ -1,4 +1,6 @@
+#import the required modules
 import sys
+
 import Slush
 
 #the number of steps we want to be moving
