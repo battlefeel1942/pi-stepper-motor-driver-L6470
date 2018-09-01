@@ -6,6 +6,8 @@ stepmove = 300000
 
 #setup the Slushengine
 b = Slush.sBoard()
+
+
 motor = Slush.Motor(0)
 motor.resetDev()
 
@@ -17,6 +19,8 @@ while(motor.isBusy()):
 	continue
 motor.move(stepmove)
 
+
+
 while(motor.isBusy()):
 	continue
 motor.move(-1 * stepmove)
@@ -27,3 +31,5 @@ while(motor.isBusy()):
 
 #release motor	
 motor.free()
+
+

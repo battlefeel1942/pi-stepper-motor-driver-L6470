@@ -12,7 +12,6 @@ class sBoard:
     """
     self.initSPI()
     self.initGPIOState()
-    self.initI2C()    
 	       
   def initGPIOState(self):
 
@@ -65,19 +64,6 @@ class sBoard:
     sBoard.spi.bits_per_word = 8
     sBoard.spi.loop = False
     sBoard.spi.mode = 3
-    
-  def initI2C(self):
-    """ initalizes the i2c bus without relation to any of its slaves
-    """
-    
-    self.bus = SMBus.SMBus(1)
-    
-    try:
-        with closing(i2c.I2CMaster(1)) as bus:
-            self.chip = MCP23017(bus, 0x20)
-            self.chip.reset()
-    except:
-        pass
 
   def deinitBoard(self):
     """ closes the board and deinits the peripherals

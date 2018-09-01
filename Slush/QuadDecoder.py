@@ -87,9 +87,4 @@ class encoder(sBoard):
 		"""
 		return 1
 
-	def readReg(self, register):
-		with i2c.I2CMaster(1) as bus:
-            		return bus.transaction(i2c.writing_bytes(encoder.DEVICEADDR, register),i2c.reading(encoder.DEVICEADDR, 1))[0][0]
-
-
 
